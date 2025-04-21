@@ -1,0 +1,117 @@
+body{
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.container{
+    width: 34rem;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.formulario{
+    width: 26rem;
+    border-radius: 4px;
+}
+.title{
+    text-align: center;
+}
+.campoForm {
+    padding: 10px 20px;
+}
+.campoForm label{
+    display: block;
+}
+input, select{
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    box-sizing: border-box; 
+}
+.section-submit, .section-styles {
+    text-align: center;
+    padding: 10px; 
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.section-submit{
+    padding: 10px 20px;
+}
+.section-submit button {
+    width: 100%;
+    box-sizing: border-box; 
+}
+.section-styles{
+    display: flex;
+    flex-direction: column;
+}
+#estilo-uno{
+    background-color: #4590e1;
+    color: white;
+}
+#estilo-alto-contraste{
+    background-color: #ffc107;
+    color: #000;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+.style-uno {
+    background-color: #efeeee;
+    color: #000;
+}
+
+.style-uno .formulario {
+    background-color: white;
+    border: 2px solid #dcdcdc;
+    color: #000;
+}
+
+.style-uno input, 
+.style-uno select{
+    background-color: white;
+    color: #000;
+    border: 1px solid #ccc;
+}
+.style-uno .section-submit button{
+    background-color: #007bff;
+    color: white;
+}
+.style-alto-contraste {
+    background-color: #000;
+    color: #fff;
+}
+
+.style-alto-contraste .formulario {
+    background-color: #252424;
+    border: 2px solid #fff;
+}
+
+.style-alto-contraste input,
+.style-alto-contraste select {
+    background-color: #111;
+    color: #fff;
+    border: 1px solid #ccc;
+    background-color: #565656;
+}
+
+.style-alto-contraste button {
+    background-color: #ffcc00;
+    color: #000;
+}
+.style-alto-contraste #estilo-uno{
+    background-color: #ffcc00;
+    color: #000;
+}
