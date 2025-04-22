@@ -1,51 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
-    
+<html lang="en">  
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de Datos Personales</title>
     <link rel="stylesheet" href="stylesFromBootstrap.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-</head>
-    
+</head>    
 <body>
-    <div class="container mt-2 style-uno">
-        <h1>Formulario de Datos Personales</h1>
-        <form >
-            <div class="form-group" >
-                <label for="nombre">Nombre:</label>
-                <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre" required minlength="2" maxlength="50" pattern="[A-Za-záéíóúÁÉÍÓÚñÑ\s]+" title="Solo letras y espacios permitidos">
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-10 col-md-8 col-lg-6 style-uno" id="form-container">
+                <h2 class="text-center mb-4 mt-2">Formulario de Datos Personales</h2>
+                <form>
+                    <div class="form-group" >
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre" required minlength="2" maxlength="50" pattern="[A-Za-záéíóúÁÉÍÓÚñÑ\s]+" title="Solo letras y espacios permitidos">
+                    </div>
+                    <div class="form-group">
+                        <label for="apellido">Apellido:</label>
+                        <input type="text" class="form-control" id="apellido" placeholder="Ingrese su apellido" required minlength="2" maxlength="50" pattern="[A-Za-záéíóúÁÉÍÓÚñÑ\s]+" title="Solo letras y espacios permitidos">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" placeholder="Ingrese su email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="nacimiento">Fecha de nacimiento</label>
+                        <input type="date" class="form-control" name="fecha-nacimiento" id="fecha-nacimiento" min="1960-01-01" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Pais de Residencia:</label>
+                        <select name="pais" class="form-control" id="pais-residencia">
+                            <option value="argentina">Argentina</option>
+                            <option value="bolivia">Bolivia</option>
+                            <option value="colombia">Colombia</option>
+                            <option value="ecuador">Ecuador</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+                    <div class="section-submit">
+                        <button type="submit" class="form-group btn w-100" onclick="obtenerValor()">Enviar</button>
+                    </div>
+                    <div class="section-styles w-100 d-flex flex-column align-items-center">
+                        <button id="estilo-uno" type="button" class="w-75">Estilo 1</button>
+                        <button id="estilo-alto-contraste" type="button" class="w-75 mb-2">Estilo de Alto Contraste</button>
+                    </div>
+                </form>
             </div>
-            <div class="form-group">
-                <label for="apellido">Apellido:</label>
-                <input type="text" class="form-control" id="apellido" placeholder="Ingrese su apellido" required minlength="2" maxlength="50" pattern="[A-Za-záéíóúÁÉÍÓÚñÑ\s]+" title="Solo letras y espacios permitidos">
-            </div>
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" class="form-control" id="email" placeholder="Ingrese su email" required>
-            </div>
-            <div class="form-group">
-                <label for="nacimiento">Fecha de nacimiento</label>
-                <input type="date" class="form-control" name="fecha-nacimiento" id="fecha-nacimiento" min="1960-01-01">
-            </div>
-            <div class="form-group">
-                <label>Pais de Residencia:</label>
-                <select name="pais" class="form-control" id="pais-residencia">
-                    <option value="argentina">Argentina</option>
-                    <option value="bolivia">Bolivia</option>
-                    <option value="colombia">Colombia</option>
-                    <option value="ecuador">Ecuador</option>
-                    <option value="otro">Otro</option>
-                </select>
-            </div>
-            <button type="submit" class="form-group btn btn-primary" onclick="obtenerValor()">Enviar</button>
-            <div class="section-styles">
-                <button id="estilo-uno"  type="button">Estilo1</button>
-                <button id="estilo-alto-contraste" type="button">Estilo de Alto Contraste</button>
-            </div>
-        </form>
-        
+        </div>       
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.0/dist/umd/popper.min.js"></script>
@@ -54,12 +57,12 @@
         document.addEventListener("DOMContentLoaded", () => {
             const botonEstiloUno = document.getElementById("estilo-uno");
             const botonAltoContraste = document.getElementById("estilo-alto-contraste");
-            const container = document.querySelector(".container");
+            const container = document.querySelector("#form-container");
             
             botonEstiloUno.addEventListener("click", () => {
                 container.classList.replace("style-alto-contraste", "style-uno");
             });
-    
+
             botonAltoContraste.addEventListener("click", () => {
                 container.classList.replace("style-uno", "style-alto-contraste");
             });
@@ -72,15 +75,14 @@
         }
         function calcularEdad(fecha_nacimiento) {
             var hoy = new Date();
-            var cumpleanos = new Date(fecha_nacimiento);
-            var edad = hoy.getFullYear() - cumpleanos.getFullYear();
-            var m = hoy.getMonth() - cumpleanos.getMonth();
-            if (m < 0 || (m === 0 && hoy.getDate() < cumpleanos.getDate())) {
+            var cumple = new Date(fecha_nacimiento);
+            var edad = hoy.getFullYear() - cumple.getFullYear();
+            var m = hoy.getMonth() - cumple.getMonth();
+            if (m < 0 || (m === 0 && hoy.getDate() < cumple.getDate())) {
                 edad--;
             }
             return edad;
         }
-
     </script>
 </body>
 </html>

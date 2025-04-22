@@ -1,57 +1,9 @@
-body{
-    width: 100%;
-    font-family: Arial, Helvetica, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
-.container{
-    width: 34rem;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.formulario{
-    width: 26rem;
-    border-radius: 4px;
-}
-.title{
-    text-align: center;
-}
-.campoForm {
-    padding: 10px 20px;
-}
-.campoForm label{
-    display: block;
-}
-input, select{
-    width: 100%;
-    padding: 8px;
-    border-radius: 4px;
-    box-sizing: border-box; 
-}
-.section-submit, .section-styles {
-    text-align: center;
-    padding: 10px; 
-}
 
 button {
     padding: 10px 15px;
+    border-radius: 0.313rem;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
-}
-.section-submit{
-    padding: 10px 20px;
-}
-.section-submit button {
-    width: 100%;
-    box-sizing: border-box; 
 }
 .section-styles{
     display: flex;
@@ -67,18 +19,15 @@ button {
     padding-top: 10px;
     margin-top: 10px;
 }
-
 .style-uno {
     background-color: #efeeee;
     color: #000;
 }
-
 .style-uno .formulario {
     background-color: white;
     border: 2px solid #dcdcdc;
     color: #000;
 }
-
 .style-uno input, 
 .style-uno select{
     background-color: white;
@@ -101,10 +50,18 @@ button {
 
 .style-alto-contraste input,
 .style-alto-contraste select {
-    background-color: #111;
-    color: #fff;
-    border: 1px solid #ccc;
-    background-color: #565656;
+    background-color: #565656 !important;
+    color: #fff !important;
+    border: 1px solid #ccc !important;
+}
+
+.style-alto-contraste input:focus,
+.style-alto-contraste select:focus {
+    background-color: #565656 !important;
+    color: #fff !important;
+    border: 1px solid #fff !important;
+    outline: none !important;
+    box-shadow: none !important;
 }
 
 .style-alto-contraste button {
